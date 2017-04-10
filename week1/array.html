@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//编写一段数组去重代码要求至少使用两种方法;
+
+		var sunarr=[2,3,5,7,8,1,6,7,3];
+		function result(arr){
+			var newarr=[];
+			//循环遍历数组中的每一项；如果newarr中找不到该数组的值，则把该值push到新数组中
+			for(var i=0; i<arr.length;i++){
+				if(newarr.indexOf(arr[i])==-1){
+					newarr.push(arr[i]);
+				}	
+			}
+			return newarr;
+		}
+		
+		function result2(arr){
+			//创建对象，和数组，遍历数组中的每一项，
+			var newobject={},result=[];
+			for(var i=0;i<arr.length;i++){
+				//对象中没有该数组的每一项
+				if(!newobject[arr[i]]){
+					newobject[arr[i]]=true;//则存入对象中去
+					result.push(arr[i])//再把该值push到r数组中去
+				}
+			}
+			return result;
+		}
+		console.log(sunarr);
+		console.log(result2(sunarr));
+	</script>
+</body>
+</html>
